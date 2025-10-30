@@ -1,0 +1,32 @@
+name: Web E2E Tests
+
+on:
+  workflow_dispach: 
+
+jobs:
+  web-tests:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    
+      # clone do projeto
+      - uses: actions/checkout@v4
+
+      # conferir a versão instalada
+      - name: Node version
+        run: node --version
+
+      # instalando dependências
+      - name: instalando dependências
+        run: npm install
+
+      # executando os testes
+      - name: Executando os testes
+        run: npx cypress run
+
+
+        
+
+
+
